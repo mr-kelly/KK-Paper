@@ -3,7 +3,10 @@
 	class Menu extends KK_Controller {
 		
 		function index() {
-			$data = array();
+			$menu_items = $this->menu_model->get();
+			$data = array(
+				'menu_items' => $menu_items,
+			);
 			kk_show_view('admin/menu/index_view', $data );
 		}
 		

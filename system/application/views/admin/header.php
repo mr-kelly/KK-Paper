@@ -52,6 +52,11 @@
 					</a>
 				</li>
 				
+				<li>
+					<a target="_blank" href="<?=site_url('');?>">
+						返回网站
+					</a>
+				</li>
 				
 			</ul>
 		

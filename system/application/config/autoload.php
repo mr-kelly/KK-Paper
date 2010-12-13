@@ -109,6 +109,7 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array('article_model', 'user_model', 'category_model',
+							'menu_model',
 );
 
 
