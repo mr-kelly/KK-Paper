@@ -39,8 +39,37 @@
 				'page_feedback' => $page_feedback,
 			);
 			
-			kk_show_view('admin/menu/add_view', $data );
+			kk_show_view('admin/menu/add_edit_view', $data );
 			
 			
 		}
+		
+		/**
+		 *	编辑菜单项
+		 */	
+		function edit( $menu_id ) {
+			
+			$page_feedback = null;
+			
+			$menu = $this->menu_model->get_single( $menu_id );
+			
+			$data = array(
+				'menu' => $menu,
+				'page_feedback' => $page_feedback,
+			);
+			
+			kk_show_view('admin/menu/add_edit_view', $data );
+			
+		}
+		
+		
+		/**
+		 *	删除指定ID的文章~
+		 */
+		function delete( $menu_id ) {
+			$this->menu_model->delete( $menu_id );
+		}
+		
+		
+		
 	}

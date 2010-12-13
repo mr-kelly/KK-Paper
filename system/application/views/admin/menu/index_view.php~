@@ -21,7 +21,6 @@
 				</span></span>
 			</button>
 		</p>
-		
 	</form>
 	
 	
@@ -38,12 +37,12 @@
 			<td><?=$item['text'];?></td>
 			<td><a href="<?=$item['link'];?>"><?=$item['link'];?></a></td>
 			<td>
-				<a href="<?=site_url('admin/menu/edit/'.$item['id']);?>">
-					编辑
-				</a>
-				<a href="<?=site_url('admin/menu/delete/'.$item['id']);?>">
-					删除
-				</a>			
+					<a href="<?=site_url('admin/menu/edit/'.$item['id']);?>">
+							编辑
+					</a>
+					<a href="<?=site_url('admin/menu/delete/'.$item['id']);?>">
+							删除
+					</a>			
 			</td>
 		</tr>
 		<?php endforeach; ?>

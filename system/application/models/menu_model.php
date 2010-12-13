@@ -41,5 +41,17 @@
 			
 		}
 		
+		function get_single( $menu_id ) {
+			return $this->get( array('id'=>$menu_id), null, null, true );
+		}
+		
+		/**
+		 *	删除menu~
+		 */
+		function delete( $menu_id ) {
+			$this->db->where('id', $menu_id);
+			$this->db->delete('menu');
+		}
+		
 		
 	}
