@@ -53,6 +53,26 @@
 			
 			$menu = $this->menu_model->get_single( $menu_id );
 			
+			// 已提交过,编辑菜单项
+			if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+				$this->form_validation->set_rules('text', 'Menu Text', 'required|trim|xss_clean');
+				$this->form_validation->set_rules('link', 'Menu link url', 'required|trim|xss_clean');
+				
+				
+				if ( ! $this->form_validation->run() ) {
+					/// 表单输入有误
+					$page_feedback .= validation_errors();
+				} else {
+					// 修改菜单项目
+					$this->menu_model->update( $menu_id,  array(
+						'text' => $this->form_validation->set_value('text'),
+						'link' => $this->form_validation->set_value('link'),
+					));
+					
+					$page_feedback .= '菜单项修改成功!';
+				}
+			}
+			
 			$data = array(
 				'menu' => $menu,
 				'page_feedback' => $page_feedback,
