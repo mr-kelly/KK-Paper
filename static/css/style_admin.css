@@ -12,12 +12,22 @@ a:hover {
 	text-decoration: underline;
 	font-weight:bold;
 }
+label {
+	vertical-align: middle;
+}
 .ellipsis {
 	overflow: hidden;
 	-o-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 }
-
+.pagination {
+	margin: 20px; 
+	font-size: 13px;
+	text-align: center;
+}
+	.pagination > * {
+		margin: 0 5px;
+	}
 #page_feedback {
 	border: 1px solid #C00;
 	color: #CD0A0A;
@@ -30,6 +40,7 @@ a:hover {
 .table_list {
 	border: 1px dashed #999;
 	width: 100%;
+	margin: 10px 0 0 0;
 }
 	.table_list th {
 		text-align: center;

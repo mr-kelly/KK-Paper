@@ -5,10 +5,22 @@
 		function index() {
 			login_redirect();
 			
-			$articles = $this->article_model->get();
+			$per_page = $this->config->item('per_page');
+			// 页面至少初始为1
+			$page = ( $this->input->get('page') == null ) ? 1 : $this->input->get('page') ;
+			
+			$articles = $this->article_model->get( array() , $per_page ,($page-1)*$per_page);
+			
+			
+			$this->load->library('KK_Pagination');
+			$pagination = $this->kk_pagination->create_links(array(
+				'total_rows' => $this->article_model->articles_count(),
+				'per_page' => $per_page,
+			));
 			
 			$data = array(
 				'articles' => $articles,
+				'pagination' => $pagination,
 			);
 			kk_show_view('admin/article/index_view',$data);
 		}

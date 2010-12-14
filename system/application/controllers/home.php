@@ -4,7 +4,7 @@
 		
 		function index() {
 			$data = array();
-			kk_template( KK_THEME . '/index', $data ); //注意一斜
+			kk_template( 'index', $data ); //注意一斜
 		}
 		
 		

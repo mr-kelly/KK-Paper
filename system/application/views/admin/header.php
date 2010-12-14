@@ -4,6 +4,10 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<?=import_css('css/style_admin.css');?>
+	
+	<?=import_css('css/decorator.css');?>
+	
+	
 	<?=import_js('js/lib.js');?>
 	<?=import_js('js/lib.address.js');?>
 	<?=import_js('js/lib.form.js');?>
@@ -51,6 +55,13 @@
 						菜单
 					</a>
 				</li>
+				<!--
+				<li>
+					<a href="">
+						系统设置
+					</a>
+				</li>
+				-->
 				
 				<li>
 					<a target="_blank" href="<?=site_url('');?>">
@@ -75,9 +86,13 @@
 	
 	
 	<div id="container">
-	
+		
 		<? if ( isset($page_feedback) && $page_feedback != '' ): ?>
 			<div id="page_feedback">
 				<?=$page_feedback;?>
 			</div>
 		<?php endif; ?>
+		
+		<div id="navigator">
+			
+		</div>

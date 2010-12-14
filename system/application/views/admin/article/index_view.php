@@ -3,6 +3,15 @@
 ?>
 
 	<div id="content">
+		<h2>文章</h2>
+		
+		<div>
+			<a href="<?=site_url('admin/article/add');?>">
+				发布新文章
+			</a>
+		</div>
+		
+		
 		<table class="table_list">
 			<tr>
 				<th width="8%">编号</th>
@@ -50,6 +59,9 @@
 				 endforeach;
 			 ?>
 		</table>
+		
+		<?=$pagination;?>
+		
 	</div>
 
 <?php

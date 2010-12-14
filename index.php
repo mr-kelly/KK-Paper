@@ -90,6 +90,12 @@ define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 define('FCPATH', str_replace(SELF, '', __FILE__));
 define('BASEPATH', $system_folder.'/');
 
+
+
+// 读取KK_Paper配置
+require_once('./config.php');
+
+
 if (is_dir($application_folder))
 {
 	define('APPPATH', $application_folder.'/');

@@ -4,14 +4,14 @@
 	 *	获取模板 Header, Footer, Sidebar
 	 */
 	function get_header() {
-		kk_template( KK_THEME . '/header' );
+		kk_template( 'header' );
 	}
 	function get_footer() {
-		kk_template( KK_THEME . '/footer');
+		kk_template( 'footer');
 	}
 	
 	function get_sidebar() {
-		kk_template( KK_THEME . '/sidebar');
+		kk_template('sidebar');
 	}
 	
 	

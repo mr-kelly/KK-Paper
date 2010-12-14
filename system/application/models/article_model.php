@@ -1,6 +1,17 @@
 <?php
 
 	class Article_Model  extends KK_Model {
+		
+		/**
+		 *	返回文章总数
+		 */
+		function articles_count() {
+			$query = $this->db->get('articles');
+			
+			return $query->num_rows();
+			
+		}
+		
 		/**
 		 *	发布文章
 		 */

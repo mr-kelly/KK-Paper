@@ -3,7 +3,8 @@
 ?>
 
 <div id="content">
-	<form method="post" action="<?=site_url('admin/menu/add');?>">
+	<h2>菜单项设置</h2>
+	<form method="post" action="<?=site_url('admin/menu');?>">
 	
 		<p>
 			<label>菜单名称</label>

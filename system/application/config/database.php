@@ -37,12 +37,12 @@
 $active_group = "default";
 $active_record = TRUE;
 
-$db['default']['hostname'] = "localhost";
-$db['default']['username'] = "root";
-$db['default']['password'] = "root";
-$db['default']['database'] = "kk_paper";
+$db['default']['hostname'] = KK_DB_HOST;
+$db['default']['username'] = KK_DB_USER;
+$db['default']['password'] = KK_DB_PWD;
+$db['default']['database'] = KK_DB_NAME;
 $db['default']['dbdriver'] = "mysql";
-$db['default']['dbprefix'] = "kk_";
+$db['default']['dbprefix'] = KK_DB_PREFIX;
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;

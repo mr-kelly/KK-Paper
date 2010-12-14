@@ -25,8 +25,8 @@
 		 *	获取菜单项
 		 */
 		function get( $where=null , $limit = null, $offset = null, $single = false ) {
-			$query = $this->db->get('menu');
-			return $query->result_array();
+			//$query = $this->db->get('menu');
+			//return $query->result_array();
 			
 			
 			$query = $this->db->get_where('menu', $where );

@@ -1,5 +1,11 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+
+/**
+ *	列表显示多少条，会分页～
+ */
+$config['per_page'] = 10;
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +29,7 @@ $config['static_url'] = $config['base_url'] . 'static/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = "index.php";
+$config['index_page'] = KK_INDEX_PAGE;
 
 /*
 |--------------------------------------------------------------------------

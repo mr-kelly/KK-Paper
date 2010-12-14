@@ -6,10 +6,15 @@
 	
 	<div id="content">
 		<form method="post" action="<?=site_url('admin/category/edit/'.$category['id']);?>">
-			<input type="text" name="name" value="<?=$category['name'];?>" />
-			
-			
-			<button type="submit">
+			<p>
+				<label>分类名称</label>
+				<input type="text" name="name" value="<?=$category['name'];?>" />
+			</p>
+			<p>
+				<label>分类简洁</label>
+				<textarea name="description"><?=$category['description'];?></textarea>
+			</p>
+			<button type="submit" class="btn">
 				<span><span>修改</span></span>
 			</button>
 			

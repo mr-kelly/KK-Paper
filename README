@@ -1,5 +1,46 @@
 KK Paper 新闻发布系统
 
 
-Mac2
+== 自建模板方法 ==
 
+	1. 在根目录config.php文件中设置要使用的模板 ( KK_THEME = sample_theme )
+	
+	2. 在目录templates/下新建一个目录（这里设目录名称sample_theme/ ), 并把kk_default中的所有文件复制到该目录
+	
+	3. 一个主题模板就这样完成了， 你可以修改sample_theme/目录下的模板文件~
+	
+	
+	
+== 自定义页面 ==
+
+	很多时候，一个新闻发布系统、博客系统除了文章的浏览之外，还有一些根据自己功能需要而设置的页。
+	这是最具特殊牛力的特性.
+	
+	模板文件夹下custom/的文件， 对应网址 /c/custom_file_name
+	
+== 网站菜单 ==
+	
+	后台可以添加
+	
+	
+	
+	
+== 模板函数 ==
+
+	get_header();   -- 获取header文件, 头部
+	
+	
+	
+	get_sidebar();  -- 获取sidebar文件，边栏
+	
+	get_footer();	-- 获取footer文件， 脚部
+	
+	
+	kk_list_article( $cat_id=null, $limit=null ); 	-- 获取文章列表(<ul><li></li></ul>)
+	
+		-- $cat_id  分类ID
+		-- $limit   限制多少条文章～ 默认10条
+		
+		
+		
+	kk_template( $file ); -- 将相应的template文件读取入来

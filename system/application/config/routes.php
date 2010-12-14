@@ -44,5 +44,7 @@ $route['default_controller'] = "home";
 $route['scaffolding_trigger'] = "";
 $route['admin'] = 'admin/dashboard';
 
+$route['c/(:any)'] = 'custom/custom_page/$1';
+
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

@@ -4,10 +4,13 @@
 
 
 <div id="content">
+
+	<h2>编辑菜单项目</h2>
+	
 	<?php if ( isset($menu) ) :  // 即修改菜单项 ?>
 	<form method="post" action="<?=site_url('admin/menu/edit/'.$menu['id']);?>">
 	<?php else: // 即添加菜单项页面 ?>
-	<form method="post" action="<?=site_url('admin/menu/add');?>">
+	<form method="post" action="<?=site_url('admin/menu');?>">
 	<?php endif; ?>
 	
 		<p>

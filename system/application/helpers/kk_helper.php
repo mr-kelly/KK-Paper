@@ -20,6 +20,14 @@ function static_url( $file = '' ) {
 }
 
 
+function template_url( $file = '') {
+	$ci =& get_instance();
+	$template_url = $ci->config->item('base_url') . 'templates/' . KK_THEME . '/' . $file;
+	
+	return $template_url;
+	
+}
+
 // 返回1 或 false
 function is_logined() {
 	$ci =& get_instance();
@@ -81,7 +89,7 @@ function kk_show_view( $view, $data ) {
 function kk_template( $file , $data = array() ) {
 	$ci =& get_instance();
 	$ci->load->vars($data);
-	echo $ci->load->file('./templates/'.$file.'.php', true);
+	echo $ci->load->file('./templates/' . KK_THEME . '/' .$file.'.php', true);
 	
 }
 

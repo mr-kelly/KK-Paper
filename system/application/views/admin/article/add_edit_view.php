@@ -91,11 +91,7 @@
 			
 			<p>
 				<button type="submit" class="btn">
-					<span>
-						<span>
-							发布
-						</span>
-					</span>
+					<span><span>发布</span></span>
 				</button>
 			</p>
 		
