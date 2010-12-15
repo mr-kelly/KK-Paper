@@ -5,6 +5,8 @@
 	
 	
 	<div id="content">
+	
+		<h2>编辑分类</h2>
 		<form method="post" action="<?=site_url('admin/category/edit/'.$category['id']);?>">
 			<p>
 				<label>分类名称</label>

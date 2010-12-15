@@ -5,6 +5,9 @@
 
 </script>
 	<div id="content">
+	
+		<h2>分类列表</h2>
+	
 		<table class="table_list">
 		
 		

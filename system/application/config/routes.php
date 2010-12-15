@@ -44,6 +44,8 @@ $route['default_controller'] = "home";
 $route['scaffolding_trigger'] = "";
 $route['admin'] = 'admin/dashboard';
 
+$route['admin/article/cat/(:num)'] = 'admin/article/index/$1';
+
 $route['c/(:any)'] = 'custom/custom_page/$1';
 
 /* End of file routes.php */

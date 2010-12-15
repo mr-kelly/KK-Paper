@@ -16,6 +16,10 @@
 	define('KK_DB_PREFIX', 'kk_');
 	
 	
+	/**
+	 *	是否允许用户注册
+	 */
+	define('KK_ALLOW_REGISTRATION', FALSE);
 	
 	
 	

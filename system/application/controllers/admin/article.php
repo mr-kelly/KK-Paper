@@ -2,14 +2,16 @@
 
 	class Article extends KK_Controller {
 	
-		function index() {
+		function index( $cat_id = null ) {
 			login_redirect();
 			
 			$per_page = $this->config->item('per_page');
 			// 页面至少初始为1
 			$page = ( $this->input->get('page') == null ) ? 1 : $this->input->get('page') ;
 			
-			$articles = $this->article_model->get( array() , $per_page ,($page-1)*$per_page);
+			
+			// 是否根据cat_id， 分类来获取文章
+			$articles = $this->article_model->get( array() , $per_page, ($page-1)*$per_page);
 			
 			
 			$this->load->library('KK_Pagination');

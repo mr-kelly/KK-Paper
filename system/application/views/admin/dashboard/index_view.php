@@ -10,6 +10,12 @@
 					发布新文章
 				</a>
 			</li>
+			
+			<li>
+				<a href="<?=site_url('admin/article');?>">
+					查看或编辑现有的文章
+				</a>
+			</li>
 	</div>
 
 <?php

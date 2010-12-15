@@ -55,7 +55,7 @@
 
 	<div id="sidebar">
 		<div class="sidebar_widget">
-			<h2>分类</h2>
+			<h2>所属分类</h2>
 			
 			<div class="sidebar_widget_content">
 				<ul>
@@ -98,7 +98,11 @@
 	</div>
 
 	<div id="content">
+		<?php if ( isset( $article ) ) : ?>
+		<h2>修改文章</h2>
+		<?php else: ?>
 		<h2>发布一篇新文章</h2>
+		<?php endif; ?>
 			<p>
 				<label>题目</label>
 				<?php
@@ -108,9 +112,9 @@
 					 */
 				?>
 				<?php if( $_SERVER["REQUEST_METHOD"] == 'POST' ): ?>
-					<input type="text" name="title" value="<?=set_value('title');?>" />
+					<input class="input_title" type="text" name="title" value="<?=set_value('title');?>" />
 				<?php else: ?>
-					<input type="text" name="title" value="<?= (isset($article) ) ? $article['title'] : '';?>" />
+					<input class="input_title" type="text" name="title" value="<?= (isset($article) ) ? $article['title'] : '';?>" />
 				<?php endif; ?>
 			</p>
 			<p>
