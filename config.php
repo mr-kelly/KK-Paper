@@ -16,6 +16,22 @@
 	define('KK_DB_PREFIX', 'kk_');
 	
 	
+	
+	/**
+	 *	网站管理后台的标题
+	 */
+	define('KK_ADMIN_TITLE', '产学研网站管理');
+	
+	
+	/**
+	 *	上传的图片是否自动resize～～
+	 */
+	define('KK_IMG_RESIZE', 300 ); // width宽度超过这个数字，才resize 
+	define('KK_IMG_RESIZE_WIDTH', 300);  // resize 的宽度
+	define('KK_IMG_RESIZE_HEIGHT', 200);  // resize的高度
+	
+	
+	
 	/**
 	 *	是否允许用户注册
 	 */

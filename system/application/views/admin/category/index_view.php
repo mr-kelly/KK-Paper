@@ -7,7 +7,12 @@
 	<div id="content">
 	
 		<h2>分类列表</h2>
-	
+		<p>
+			<a href="<?=site_url('admin/category/add');?>">
+				添加新的分类
+			</a>
+		</p>
+		
 		<table class="table_list">
 		
 		

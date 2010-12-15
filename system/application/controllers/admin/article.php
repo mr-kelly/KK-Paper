@@ -4,6 +4,7 @@
 	
 		function index( $cat_id = null ) {
 			login_redirect();
+			$this->load->library('KK_Pagination');
 			
 			$per_page = $this->config->item('per_page');
 			// 页面至少初始为1
@@ -11,18 +12,32 @@
 			
 			
 			// 是否根据cat_id， 分类来获取文章
-			$articles = $this->article_model->get( array() , $per_page, ($page-1)*$per_page);
-			
-			
-			$this->load->library('KK_Pagination');
-			$pagination = $this->kk_pagination->create_links(array(
-				'total_rows' => $this->article_model->articles_count(),
-				'per_page' => $per_page,
-			));
+			if ( !$cat_id ) {
+				// 没设置分类, 抓取所有文章
+				$articles = $this->article_model->get( array() , $per_page, ($page-1)*$per_page);
+				$pagination = $this->kk_pagination->create_links(array(
+					'total_rows' => $this->article_model->articles_count(),
+					'per_page' => $per_page,
+				));
+				$cat_name = '';
+			} else {
+				// 设置了分类，抓取分类文章
+				$articles = $this->article_model->get_articles_by_cat_id( $cat_id, $per_page, ($page-1)*$per_page );
+				$pagination = $this->kk_pagination->create_links(array(
+					'total_rows' => $this->article_model->get_articles_count_by_cat_id( $cat_id ), // 获得分类文章总数目
+					'per_page' => $per_page,
+				));
+				
+				// 标题显示"xx分类的文章"  -  $cat_name
+				$cat = $this->category_model->get_single( array('id'=>$cat_id));
+				$cat_name = $cat['name'];
+			}
+
 			
 			$data = array(
 				'articles' => $articles,
 				'pagination' => $pagination,
+				'cat_name' => $cat_name,  // 当前查看的分类的名称
 			);
 			kk_show_view('admin/article/index_view',$data);
 		}
@@ -132,7 +147,10 @@
 		function delete( $article_id ) {
 			login_redirect();
 			
-			$data = array();
+			$this->article_model->delete($article_id);
+			
+			// 回到编辑分类页面
+			redirect('admin/article');
 			
 		}
 	}

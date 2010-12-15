@@ -7,7 +7,7 @@
 		
 		KE.show({
 			id : 'content_editor',
-			imageUploadJson : '<?=static_url("js/kindeditor/php/upload_json.php");?>',
+			imageUploadJson : '<?=site_url("upload/img");?>', //'<?=static_url("js/kindeditor/php/upload_json.php");?>',
 			fileManagerJson : '<?=static_url("js/kindeditor/php/file_manager_json.php");?>',//'../../php/file_manager_json.php',
 			allowFileManager : true,
 			afterCreate : function(id) {
@@ -57,6 +57,12 @@
 		<div class="sidebar_widget">
 			<h2>所属分类</h2>
 			
+			
+			<p>
+				<a href="<?=site_url('admin/category/add');?>">创建新的文章分类</a>
+			</p>
+			
+			
 			<div class="sidebar_widget_content">
 				<ul>
 				<?php 
@@ -83,17 +89,23 @@
 					endforeach; 
 				?>
 				</ul>
+				
+				
 			</div>
 			
-			
-		</div>
-		
-			
+
 			<p>
 				<button type="submit" class="btn">
 					<span><span>发布</span></span>
 				</button>
 			</p>
+
+			
+			
+		</div>
+		
+			
+
 		
 	</div>
 

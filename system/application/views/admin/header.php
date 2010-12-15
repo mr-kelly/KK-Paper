@@ -12,6 +12,10 @@
 	<?=import_js('js/lib.address.js');?>
 	<?=import_js('js/lib.form.js');?>
 	
+	<? // Tipsy ?>
+	<?=import_js('js/tipsy/jquery.tipsy.js');?>
+	<?=import_css('js/tipsy/tipsy.css');?>
+	
 	<?=import_js('js/global.js');?>
 	<title>KK新闻系统管理</title>
 </head>
@@ -19,39 +23,34 @@
 
 	
 	<div id="header">
-		<h2>KK Paper</h2>
+		<h2><?=KK_ADMIN_TITLE;?></h2>
 		<div id="menu">
 			<ul>
 				<li>
-					<a id="btn_admin_home" href="<?=site_url('admin');?>">
+					<a class="tooltip" title="返回后台管理的首页" id="btn_admin_home" href="<?=site_url('admin');?>">
 						后台首页
 					</a>
 				</li>
 				<li>
-					<a id="btn_admin_article_add" href="<?=site_url('admin/article/add');?>">
+					<a class="tooltip" title="发布一篇新文章" id="btn_admin_article_add" href="<?=site_url('admin/article/add');?>">
 						发布文章
 					</a>
 				</li>
 				
 				<li>
-					<a id="btn_admin_article_edit" href="<?=site_url('admin/article/');?>">
+					<a id="btn_admin_article_edit" class="tooltip" title="查看并修改文章" href="<?=site_url('admin/article/');?>">
 						编辑文章
 					</a>
 				</li>
 				
 				<li>
-					<a href="<?=site_url('admin/category/');?>">
-						编辑分类
+					<a class="tooltip" title="查看、添加、删除文章分类" href="<?=site_url('admin/category/');?>">
+						分类
 					</a>
 				</li>
 				
 				<li>
-					<a href="<?=site_url('admin/category/add');?>">
-						创建分类
-					</a>
-				</li>
-				<li>
-					<a href="<?=site_url('admin/menu');?>">
+					<a class="tooltip" title="查看、添加、删除菜单项" href="<?=site_url('admin/menu');?>">
 						菜单
 					</a>
 				</li>
@@ -64,7 +63,7 @@
 				-->
 				
 				<li>
-					<a target="_blank" href="<?=site_url('');?>">
+					<a class="tooltip" title="返回网站首页" target="_blank" href="<?=site_url('');?>">
 						返回网站
 					</a>
 				</li>

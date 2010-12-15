@@ -16,7 +16,11 @@
 			
 			$pages = ceil( $option['total_rows'] / $option['per_page'] );
 			$ci =& get_instance();
+			// 读取get[page], 如果没有，page为1
 			$current_page = $ci->input->get( $option['get'] );
+			if ( ! $current_page ) {
+				$current_page = 1;
+			}
 			
 			$return = '<div class="pagination">';
 			

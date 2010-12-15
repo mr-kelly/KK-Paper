@@ -75,7 +75,7 @@
 			kk_show_view('admin/category/edit_view', $data);
 		}
 		
-		
+
 		function delete( $category_id ) {
 			
 			login_redirect();

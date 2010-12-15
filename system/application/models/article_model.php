@@ -68,11 +68,40 @@
 		}
 		
 		
+		function get_articles_by_cat_id ( $cat_id, $limit=null, $offset=null ) {
+			$this->db->order_by('modified', 'desc');
+			$article_ids = $this->db->get_where('article_categories', array(
+				'category_id' => $cat_id,
+			), $limit, $offset );
+			
+			$article_ids = $article_ids->result_array();
+			$return = array();
+			foreach ( $article_ids as $article ) {
+				array_push( $return, $this->get( array('id'=>$article['article_id']) ) );
+			}
+			
+			return $return;
+			
+		}
+		
+		/**
+		 *	获得指定分类的文章总数，返回数字
+		 */
+		function get_articles_count_by_cat_id( $cat_id ) {
+			$articles = $this->db->get_where('article_categories', array(
+				'category_id' => $cat_id,
+			));
+			
+			return $articles->num_rows();
+		}
+		
 		/**
 		 *	删除文章
 		 */
-		function delete( $where ) {
-			$this->db->delete('articles', $where );
+		function delete( $article_id ) {
+			$this->db->delete('articles', array(
+				'id' => $article_id,
+			) );
 		}
 		
 		

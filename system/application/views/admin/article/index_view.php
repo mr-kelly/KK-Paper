@@ -3,7 +3,7 @@
 ?>
 
 	<div id="content">
-		<h2>文章</h2>
+		<h2><?=( $cat_name != '' ) ? '「'.$cat_name.'」的' : '';?>文章</h2>
 		
 		<div>
 			<a href="<?=site_url('admin/article/add');?>">
@@ -34,7 +34,9 @@
 							foreach( $article['categories'] as $cat ) : 
 					?>
 					<span>
-						<?=$cat['name'];?>
+						<a href="<?=site_url('admin/article/cat/' . $cat['id'] );?>">
+							<?=$cat['name'];?>
+						</a>
 					</span> /
 					<?php 
 							endforeach; 
@@ -49,7 +51,7 @@
 						编辑
 					</a>
 					/
-					<a href="<?=site_url('admin/article/delete/'.$article['id']);?>">
+					<a class="delete_btn" href="<?=site_url('admin/article/delete/'.$article['id']);?>">
 						删除
 					</a>
 				</td>
