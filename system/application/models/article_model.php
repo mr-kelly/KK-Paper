@@ -40,7 +40,7 @@
 		/**
 		 *	获得文章
 		 */
-		function get( $where = array() , $limit = null, $offset = null ) {
+		function get( $where = array() , $limit = null, $offset = null, $single=false ) {
 			$this->db->order_by('modified', 'desc');
 			$query = $this->db->get_where( 'articles', $where, $limit, $offset );
 			
@@ -54,7 +54,7 @@
 			
 			
 			
-			if ( $query->num_rows() == 1 ) {
+			if ( $query->num_rows() == 1 && $single ) {
 				// 如果只有一篇文章，返回一篇
 				
 				return $articles[0];
@@ -65,6 +65,10 @@
 			
 			
 			
+		}
+		
+		function get_single($id ) {
+			return $this->get( array('id'=>$id ), null, null, true);
 		}
 		
 		

@@ -99,9 +99,7 @@
 			$page_feedback = null;
 			$categories = $this->category_model->get();
 			
-			$articles = $this->article_model->get( array(
-				'id' => $article_id,
-			));
+			$articles = $this->article_model->get_single( $article_id );
 			$article =& $articles;
 			
 			

@@ -10,7 +10,6 @@ a, a:link, a:visited, a:active {
 }
 a:hover {
 	text-decoration: underline;
-	font-weight:bold;
 }
 label {
 	vertical-align: middle;
@@ -31,6 +30,8 @@ h2 {
 	line-height: 25px;
 	display: block;
 	font-size: 14px;
+	border: 1px solid #CCC;
+	padding: 2px 5px;
 }
 
 .ellipsis {
