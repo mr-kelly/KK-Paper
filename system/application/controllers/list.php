@@ -5,8 +5,15 @@
 	 */
 	class List extends KK_Controller {
 		
-		function category() {
-		
+		function category( $cat_id ) {
+			$articles = $this->article_model->get_articles_by_cat_id( $cat_id );
+			
+			$data = array(
+				'articles' => $articles,
+			);
+			
+			kk_template('list', $articles);
+			
 		}
 		
 	}

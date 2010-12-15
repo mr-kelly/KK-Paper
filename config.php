@@ -61,4 +61,4 @@
 	
 	
 	// 首页， 如果是PATH_INFO, 为空， 否则为index.php比较好
-	define('KK_INDEX_PAGE', '');  
+	define('KK_INDEX_PAGE', 'index.php');  

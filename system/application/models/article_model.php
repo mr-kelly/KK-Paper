@@ -153,5 +153,14 @@
 		 }
 		
 		
+		 function search_articles( $query_string ) {
+		 	$this->db->or_like(array(
+		 		'title' => $query_string,
+		 		'content' => $query_string,
+		 	));
+		 	$query = $this->db->get('articles');
+		 	return $query->result_array();
+		 }
+		
 		
 	}
