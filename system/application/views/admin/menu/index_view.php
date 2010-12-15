@@ -42,7 +42,7 @@
 				<a href="<?=site_url('admin/menu/edit/'.$item['id']);?>">
 					编辑
 				</a>
-				<a href="<?=site_url('admin/menu/delete/'.$item['id']);?>">
+				<a class="delete_btn" href="<?=site_url('admin/menu/delete/'.$item['id']);?>">
 					删除
 				</a>			
 			</td>

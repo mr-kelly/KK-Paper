@@ -56,8 +56,6 @@
 	<div id="sidebar">
 		<div class="sidebar_widget">
 			<h2>所属分类</h2>
-			
-			
 			<p>
 				<a href="<?=site_url('admin/category/add');?>">创建新的文章分类</a>
 			</p>
@@ -73,17 +71,17 @@
 						if ( isset($article) ):
 																				// 根据categories ids 判断 文章是否属于那个分类
 				?>
-					<input type="checkbox" name="cat[]" value="<?=$cat['id'];?>" <?= ( array_key_exists($cat['id'], $article['categories'] ) ) ? 'checked="checked"' : '' ;?> />
+					<input id="cat_<?=$cat['id'];?>" type="checkbox" name="cat[]" value="<?=$cat['id'];?>" <?= ( array_key_exists($cat['id'], $article['categories'] ) ) ? 'checked="checked"' : '' ;?> />
 				<?php
 						else:
 							// Add页面，列出所有分类
 				?>
-					<input type="checkbox" name="cat[]" value="<?=$cat['id'];?>" <?=set_checkbox('cat[]', $cat['id'] );?> />
+					<input id="cat_<?=$cat['id'];?>" type="checkbox" name="cat[]" value="<?=$cat['id'];?>" <?=set_checkbox('cat[]', $cat['id'] );?> />
 				<?php
 						endif;
 				?>
 				
-					<label><?=$cat['name'];?></label>
+					<label for="cat_<?=$cat['id'];?>"><?=$cat['name'];?></label>
 					</li>
 				<?php 
 					endforeach; 

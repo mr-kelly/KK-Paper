@@ -112,6 +112,8 @@
 		 */
 		function delete( $menu_id ) {
 			$this->menu_model->delete( $menu_id );
+			
+			redirect('admin/menu/');
 		}
 		
 		
