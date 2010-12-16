@@ -14,5 +14,12 @@
 		// Tipsy Form表单提示～
 		$('.tooltip_form [title]').tipsy( { trigger: 'focus', gravity: $.fn.tipsy.autoWE , fade: true } );
 		
+		
+		
+		
+		
+        $('#slider').s3Slider({
+            timeOut: 3000
+        });
 	});
 	

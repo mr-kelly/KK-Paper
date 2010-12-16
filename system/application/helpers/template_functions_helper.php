@@ -64,8 +64,44 @@
 	}
 	
 	/**
-	 *	图片幻灯片~
+	 *	图片幻灯片~  自动获取前5篇文章，抓取文章内容中的图片部分~
 	 */
 	function kk_photos_slider() {
-	
+		$return = '';
+		//$ci =& get_instance();
+		//$articles = $ci->article_model->get( array(), 5, null );
+		
+		
+		//$article = $articles[3];
+		
+		//substr( $article['content'], '<img src=""',;
+		//return $return;
+		
+		return <<<EOT
+   <div id="slider">
+        <ul id="sliderContent">
+            <li class="sliderImage">
+                <a href=""><img src="/kk_paper/static/upload/img/2010/12/15/48d29a45ebab9b8dbcd978b52841031a.jpg" alt="1" /></a>
+                <span class="top"><strong>Title text 1</strong><br />Content text...</span>
+            </li>
+            <li class="sliderImage">
+                <a href=""><img src="/kk_paper/static/upload/img/2010/12/15/425ece80100e14a06a4f8a7987cd3d7f.jpg" alt="2" /></a>
+                <span class="top"><strong>Title text 2</strong><br />Content text...Content text...Content text...Content text...Content text...Content text...Content text...Content text...Content text...Content text...Content text...</span>
+            </li>
+            <li class="sliderImage">
+                <img src="/kk_paper/static/upload/img/2010/12/15/67707a400e4d56a516428a31bbcb87de.jpg" alt="3" />
+                <span class="bottom"><strong>Title text 3</strong><br />Content text...</span>
+            </li>
+            <li class="sliderImage">
+                <img src="/kk_paper/static/upload/img/2010/12/15/f6dd7f94618c02de1a413f774ae53932.jpg" alt="4" />
+                <span class="bottom"><strong>Title text 4</strong><br />Content text...</span>
+            </li>
+            <li class="sliderImage">
+                <img src="/kk_paper/static/upload/img/2010/12/15/f6dd7f94618c02de1a413f774ae53932.jpg" alt="5" />
+                <span class="top"><strong>Title text 5</strong><br />Content text...</span>
+            </li>
+            <div class="clear sliderImage"></div>
+        </ul>
+    </div>
+EOT;
 	}
