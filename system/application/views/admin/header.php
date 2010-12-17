@@ -16,70 +16,70 @@
 	<?=import_js('js/tipsy/jquery.tipsy.js');?>
 	<?=import_css('js/tipsy/tipsy.css');?>
 	
-	<?=import_js('js/global.js');?>
+	<?=import_js('js/global_admin.js');?>
 	<title>KK新闻系统管理</title>
 </head>
 <body>
 
 	
 	<div id="header">
-		<h2><?=KK_ADMIN_TITLE;?></h2>
-		<div id="menu">
-			<ul>
-				<li>
-					<a class="tooltip" title="返回后台管理的首页" id="btn_admin_home" href="<?=site_url('admin');?>">
-						后台首页
-					</a>
-				</li>
-				<li>
-					<a class="tooltip" title="发布一篇新文章" id="btn_admin_article_add" href="<?=site_url('admin/article/add');?>">
-						发布文章
-					</a>
-				</li>
-				
-				<li>
-					<a id="btn_admin_article_edit" class="tooltip" title="查看并修改文章" href="<?=site_url('admin/article/');?>">
-						编辑文章
-					</a>
-				</li>
-				
-				<li>
-					<a class="tooltip" title="查看、添加、删除文章分类" href="<?=site_url('admin/category/');?>">
-						分类
-					</a>
-				</li>
-				
-				<li>
-					<a class="tooltip" title="查看、添加、删除菜单项" href="<?=site_url('admin/menu');?>">
-						菜单
-					</a>
-				</li>
-				<!--
-				<li>
-					<a href="">
-						系统设置
-					</a>
-				</li>
-				-->
-				
-				<li>
-					<a class="tooltip" title="返回网站首页" target="_blank" href="<?=site_url('');?>">
-						返回网站
-					</a>
-				</li>
-				
-			</ul>
-		
+		<div id="header_container">
+			<h2><?=KK_ADMIN_TITLE;?></h2>
+			<div id="menu">
+				<ul>
+					<li>
+						<a class="tooltip" title="返回后台管理的首页" id="btn_admin_home" href="<?=site_url('admin');?>">
+							后台首页
+						</a>
+					</li>
+					<li>
+						<a class="tooltip" title="发布一篇新文章" id="btn_admin_article_add" href="<?=site_url('admin/article/add');?>">
+							发布文章
+						</a>
+					</li>
+					
+					<li>
+						<a id="btn_admin_article_edit" class="tooltip" title="查看并修改文章" href="<?=site_url('admin/article/');?>">
+							编辑文章
+						</a>
+					</li>
+					
+					<li>
+						<a class="tooltip" title="查看、添加、删除文章分类" href="<?=site_url('admin/category/');?>">
+							分类
+						</a>
+					</li>
+					
+					<li>
+						<a class="tooltip" title="查看、添加、删除菜单项" href="<?=site_url('admin/menu');?>">
+							菜单
+						</a>
+					</li>
+					
+					<li>
+						<a class="tooltip" title="系统、用户相关设置" href="<?=site_url('admin/setting');?>">
+							系统设置
+						</a>
+					</li>
+					
+					<li>
+						<a class="tooltip" title="返回网站首页" target="_blank" href="<?=site_url('');?>">
+							返回网站
+						</a>
+					</li>
+					
+				</ul>
+			
+			</div>
+			
+			<div id="auth_box">
+				<?php if( is_logined() ): ?>
+				<a href="<?=site_url('auth/logout?redirect='.uri_string() );?>">退出</a>
+				<?php else: ?>
+				<a href="<?=site_url('auth/login');?>">登录</a>
+				<?php endif; ?>
+			</div>
 		</div>
-		
-		<div id="auth_box">
-			<?php if( is_logined() ): ?>
-			<a href="<?=site_url('auth/logout?redirect='.uri_string() );?>">退出</a>
-			<?php else: ?>
-			<a href="<?=site_url('auth/login');?>">登录</a>
-			<?php endif; ?>
-		</div>
-		
 		
 	</div>
 	

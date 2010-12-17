@@ -5,7 +5,28 @@
 		function index() {
 			login_redirect();
 			
+			$page_feedback = null;
+			
+			if ( $_SERVER["REQUEST_METHOD"] == 'POST' ) {
+				$this->form_validation->set_rules('name','Name', 'required|xss_clean|');
+				$this->form_validation->set_rules('parent_id','parent_id', 'xss_clean');
+				$this->form_validation->set_rules('description','Name', 'xss_clean');
+				
+				if ( !$this->form_validation->run() ) {
+					// 表单验证失败的话...
+					$page_feedback .= validation_errors();
+				} else {
+					$this->category_model->create( array(
+						'name' => $this->form_validation->set_value('name'),
+						'parent_id' => $this->form_validation->set_value('parent_id'),
+						'description' => $this->form_validation->set_value('description'),
+					));
+					$page_feedback .= '分类创建成功';
+				}
+			}
+			
 			$data = array(
+				'page_feedback' => $page_feedback,
 				'categories' => $this->category_model->get($where=null, $single=false),
 			);
 			kk_show_view('admin/category/index_view', $data);
@@ -30,7 +51,7 @@
 						'parent_id' => $this->form_validation->set_value('parent_id'),
 						'description' => $this->form_validation->set_value('description'),
 					));
-					$page_feedback = 'OK';
+					$page_feedback = '分类创建成功';
 				}
 			}
 			

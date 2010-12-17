@@ -8,6 +8,7 @@
 			
 			
 			
+			
 			if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 				$this->form_validation->set_rules('text', 'Menu Text', 'required|trim|xss_clean');
 				$this->form_validation->set_rules('link', 'Menu Link', 'required|trim|xss_clean');
@@ -30,6 +31,7 @@
 			
 			$data = array(
 				'menu_items' => $menu_items,
+				'page_feedback' => $page_feedback,
 			);
 			kk_show_view('admin/menu/index_view', $data );
 		}
@@ -54,7 +56,7 @@
 						'text' => $this->form_validation->set_value('text'),
 						'link' => $this->form_validation->set_value('link'),
 					));
-
+					$page_feedback .= '菜单项创建成功';
 				}
 			}
 			

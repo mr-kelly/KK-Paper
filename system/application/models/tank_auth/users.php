@@ -392,6 +392,38 @@ class Users extends Model
 		$this->db->where('user_id', $user_id);
 		$this->db->delete($this->profile_table_name);
 	}
+	
+	function get_profile( $user_id ) {
+		$this->db->where('user_id', $user_id);
+		$query = $this->db->get('user_profiles');
+		
+		if ( $query->num_rows() == 1 ) {
+			$user_profile = $query->result_array();
+			
+			// 返回第一条
+			return $user_profile[0];
+			
+		} else {
+			exit('can not find user profile');
+		}
+		
+	}
+	
+	/**
+	 *	分配用户角色~
+	 
+	 	admin
+	 	editor
+	 	user
+	 */
+	function set_role( $user_id, $role ) {
+		$this->db->where('user_id', $user_id);
+		return $this->db->update('user_profiles', array(
+			'role' => $role,
+		));
+	}
+	
+	
 }
 
 /* End of file users.php */

@@ -2,29 +2,29 @@
 	$this->load->view('admin/header');
 ?>
 
+
 <div id="content">
 	<h2>菜单项设置</h2>
-	<form method="post" action="<?=site_url('admin/menu');?>">
 	
-		<p>
-			<label>菜单名称</label>
-			<input type="text" name="text" />
-		</p>
-		<p>
-			<label>链接</label>
-			<input type="text" name="link" />
-		</p>
-		
-		<p>
-			<button>
-				<span><span>
-					添加
-				</span></span>
-			</button>
-		</p>
-		
-	</form>
+	<a href="#" id="btn_menu_add">新建菜单项</a>
 	
+	<div id="div_menu_add" class="hidden">
+		<form method="post" action="<?=site_url('admin/menu');?>">
+		
+			<p>
+				<label>菜单名称</label>
+				<input type="text" name="text" />
+
+				<label>链接</label>
+				<input type="text" name="link" />
+
+				<button class="btn">
+					<span><span>添加</span></span>
+				</button>
+			</p>
+			
+		</form>
+	</div>
 	
 	<table class="table_list">
 		<tr>

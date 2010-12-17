@@ -17,9 +17,26 @@
 		
 		
 		
-		
-        $('#slider').s3Slider({
-            timeOut: 3000
-        });
 	});
 	
+	
+	
+	/** Toggle 按钮 */
+	$(function(){
+	
+	
+		$('#btn_category_add').click(function(){
+			$('#div_category_add').toggle();
+			
+			return false;
+		});
+		
+		
+		$('#btn_menu_add').click(function(){
+			$('#div_menu_add').toggle();
+			return false;
+		});
+		
+		
+		
+	});

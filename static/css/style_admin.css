@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 12px;
+	font-size: 13px;
 	text-align:center;
 }
 a, a:link, a:visited, a:active {
@@ -23,7 +23,9 @@ li {
 h2 {
 	font-size: 16px;
 }
-
+.hidden {
+	display: none;
+}
 .input_title {
 	width: 90%;
 	clear: left;
@@ -32,6 +34,7 @@ h2 {
 	font-size: 14px;
 	border: 1px solid #CCC;
 	padding: 2px 5px;
+	outline: none;
 }
 
 .ellipsis {
@@ -76,7 +79,13 @@ h2 {
 	height: 36px;
 	color: #CCC;
 	background: url(../img/header_bg.gif);
+	text-align: center;
 }
+	#header_container {
+		width: 960px;
+		margin: 0 auto;
+		text-align: left;
+	}
 	#header h2 {
 		display: inline-block;
 		float:left;
@@ -86,7 +95,8 @@ h2 {
 		height: 36px;
 		line-height: 36px;
 		margin: 0;
-		padding: 0;
+		padding: 0 0 0 20px;
+		background: no-repeat url('../img/kk_logo.gif');
 	}
 	#menu ul {
 		list-style:none;
@@ -133,6 +143,11 @@ h2 {
 		width: 90%;
 	}
 	
+	
+	#div_category_add, #div_menu_add {
+		border: 1px dashed #CCC;
+		padding: 0 0 0 10px;
+	}
 #sidebar {
 	float:right;
 	width: 250px;

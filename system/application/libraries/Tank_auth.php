@@ -36,7 +36,13 @@ class Tank_auth
 		// Try to autologin
 		$this->autologin();
 	}
-
+	
+	
+	function get_user_profile( $user_id ) {
+		$user_profile = $this->ci->users->get_profile( $user_id );
+		return $user_profile;
+	}
+	
 	/**
 	 * Login user on the site. Return TRUE if login is successful
 	 * (user exists and activated, password is correct), otherwise FALSE.

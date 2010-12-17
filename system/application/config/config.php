@@ -62,6 +62,18 @@ $config['uri_protocol']	= "PATH_INFO";
 
 $config['url_suffix'] = "";
 
+
+/**
+ *	帐户、用户角色
+ */
+$config['user_roles'] = array(
+	'admin' => '管理员',
+	'editor' => '编辑',
+	'author' => '作者',
+	'user' => '注册用户',
+);
+
+
 /*
 |--------------------------------------------------------------------------
 | Default Language
