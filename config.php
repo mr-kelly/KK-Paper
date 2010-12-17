@@ -35,7 +35,7 @@
 	/**
 	 *	是否允许用户注册
 	 */
-	define('KK_ALLOW_REGISTRATION', FALSE);
+	define('KK_ALLOW_REGISTRATION', TRUE);
 	
 	
 	

@@ -37,7 +37,14 @@ class Users extends Model
 		$this->db->where('activated', $activated ? 1 : 0);
 
 		$query = $this->db->get($this->table_name);
-		if ($query->num_rows() == 1) return $query->row();
+		if ($query->num_rows() == 1) {
+			$user = $query->row();
+		
+			// 抓取profile
+			$user->profile = $this->get_profile( $user_id );
+			return $user;
+		}
+		
 		return NULL;
 	}
 
@@ -378,6 +385,7 @@ class Users extends Model
 	private function create_profile($user_id)
 	{
 		$this->db->set('user_id', $user_id);
+		$this->db->set('role', 'user');
 		return $this->db->insert($this->profile_table_name);
 	}
 

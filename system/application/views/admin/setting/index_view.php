@@ -3,6 +3,10 @@
 ?>
 
 <div id="content">
+	<div id="topbar">
+		
+	</div>
+
 	<h2>添加用户</h2>
 	
 	<form action="<?=site_url('admin/setting/user_add');?>" method="post">

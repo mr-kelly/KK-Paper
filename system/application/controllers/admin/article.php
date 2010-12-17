@@ -3,7 +3,7 @@
 	class Article extends KK_Controller {
 	
 		function index( $cat_id = null ) {
-			login_redirect();
+			login_redirect('author');
 			$this->load->library('KK_Pagination');
 			
 			$per_page = $this->config->item('per_page');
@@ -45,7 +45,7 @@
 		
 		
 		function add() {
-			login_redirect();
+			login_redirect('author');
 			
 			$page_feedback = $this->input->get('page_feedback');
 			$categories = $this->category_model->get();
@@ -94,7 +94,7 @@
 		 *	编辑
 		 */
 		function edit( $article_id ) {
-			login_redirect();
+			login_redirect('editor');
 			
 			$page_feedback = null;
 			$categories = $this->category_model->get();

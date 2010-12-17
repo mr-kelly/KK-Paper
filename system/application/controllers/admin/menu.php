@@ -12,6 +12,8 @@
 			if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 				$this->form_validation->set_rules('text', 'Menu Text', 'required|trim|xss_clean');
 				$this->form_validation->set_rules('link', 'Menu Link', 'required|trim|xss_clean');
+				$this->form_validation->set_rules('menu_order', 'Menu Order', 'required|trim|xss_clean');
+				
 				
 				if ( ! $this->form_validation->run() ) {
 					$page_feedback .= validation_errors();
@@ -20,6 +22,7 @@
 					$menu_id = $this->menu_model->add( array(
 						'text' => $this->form_validation->set_value('text'),
 						'link' => $this->form_validation->set_value('link'),
+						'menu_order' => $this->form_validation->set_value('menu_order'),
 					));
 					
 					$page_feedback .= '菜单添加成功！';

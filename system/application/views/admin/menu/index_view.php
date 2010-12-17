@@ -9,7 +9,7 @@
 	<a href="#" id="btn_menu_add">新建菜单项</a>
 	
 	<div id="div_menu_add" class="hidden">
-		<form method="post" action="<?=site_url('admin/menu');?>">
+		<form class="tooltip" method="post" action="<?=site_url('admin/menu');?>">
 		
 			<p>
 				<label>菜单名称</label>
@@ -17,7 +17,10 @@
 
 				<label>链接</label>
 				<input type="text" name="link" />
-
+				
+				<label>顺序</label>
+				<input type="text" name="menu_order" title="数字越大，菜单排得越前" value="0" />
+				
 				<button class="btn">
 					<span><span>添加</span></span>
 				</button>

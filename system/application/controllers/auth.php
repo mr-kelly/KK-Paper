@@ -108,6 +108,11 @@ class Auth extends Controller
 	function logout()
 	{
 		$this->tank_auth->logout();
+		
+		// 转向之前的页
+		$redirect = $this->input->get('redirect');
+		
+		redirect( $redirect );
 
 		$this->_show_message($this->lang->line('auth_message_logged_out'));
 	}
