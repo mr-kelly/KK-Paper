@@ -1,5 +1,22 @@
 <?php
 	
+	
+	
+	/**
+	 *	获得静态文档的网址URL
+	 */
+	function get_static( $file ) {
+		return static_url( $file );
+	}
+	
+	
+	/**
+	 *	获得当前主题文件夹中的文件的网址 ,  通常用于theme css~
+	 */
+	function get_theme_file( $file ) {
+		return static_url('../templates/' . KK_THEME . '/' . $file );
+	}
+	
 	/**
 	 *	获取模板 Header, Footer, Sidebar
 	 */
@@ -20,7 +37,7 @@
 	 */
 	function kk_list_articles( $cat_id=null, $limit=null) {
 		$ci =& get_instance();
-		$articles = $ci->article_model->get();
+		$articles = $ci->article_model->get_articles_by_cat_id( $cat_id, $limit);
 		
 		$return = null;
 		foreach ( $articles as $article ) {
@@ -49,7 +66,7 @@
 		$return = null;
 		$return .= '<ul id="menu">';
 		foreach( $menu_items as $menu ) {
-			$return .= sprintf( '<li><a href="%s">%s</a></li>', $menu['link'], $menu['text'] );
+			$return .= sprintf( '<li><a href="%s">%s</a></li>', site_url($menu['link']), $menu['text'] );
 		}
 		$return .= '</ul>';
 		
@@ -77,7 +94,17 @@
 		//substr( $article['content'], '<img src=""',;
 		//return $return;
 		
-		return <<<EOT
+		$return .= import_js('js/s3Slider.js');
+		$return .= import_css('css/photos_slider.css');
+		
+		$return .= <<<EOT
+   <script>
+	   $(function(){
+		   $('#slider').s3Slider({
+			   timeOut: 3000
+		   });
+	   });
+   </script>
    <div id="slider">
         <ul id="sliderContent">
             <li class="sliderImage">
@@ -104,4 +131,6 @@
         </ul>
     </div>
 EOT;
+
+		return $return;
 	}

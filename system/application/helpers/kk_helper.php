@@ -81,7 +81,6 @@ function get_user( $user_id = null ) {
 	$user = $ci->users->get_user_by_id( $user_id, true );
 	
 	return (array)$user;
-	
 }
 
 

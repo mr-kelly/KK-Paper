@@ -28,7 +28,7 @@
 			//$query = $this->db->get('menu');
 			//return $query->result_array();
 			
-			
+			$this->db->order_by('menu_order','asc');
 			$query = $this->db->get_where('menu', $where );
 			
 			if ( $query->num_rows() == 1 && $single) {

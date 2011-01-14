@@ -42,8 +42,12 @@
 		 */
 		function get( $where = array() , $limit = null, $offset = null, $single=false ) {
 			$this->db->order_by('modified', 'desc');
-			$query = $this->db->get_where( 'articles', $where, $limit, $offset );
+			$query = $this->db->get_where('articles', $where, $limit, $offset );
 			
+			// 判断是否存在, 否则返回失败
+			if ( $query->num_rows() == 0 ) {
+				return false;
+			}
 			
 			$articles = $query->result_array();
 			
@@ -74,17 +78,21 @@
 		
 		function get_articles_by_cat_id ( $cat_id, $limit=null, $offset=null ) {
 			$this->db->order_by('modified', 'desc');
+			
 			$article_ids = $this->db->get_where('article_categories', array(
 				'category_id' => $cat_id,
 			), $limit, $offset );
 			
 			$article_ids = $article_ids->result_array();
 			$return = array();
-			foreach ( $article_ids as $article ) {
-				array_push( $return, $this->get( array('id'=>$article['article_id']) ) );
+			foreach ( $article_ids as $article_id ) {
+				$article = $this->get_single( $article_id['article_id'] );
+				if ( $article ) {
+					array_push( $return, $article );
+				}
 			}
-			
 			return $return;
+			
 			
 		}
 		

@@ -1,7 +1,7 @@
 <?php	
 	// 所使用的主题模板
-	define('KK_THEME', 'sample_theme');
-	
+	//define('KK_THEME', 'sample_theme');
+	define('KK_THEME', 'cxy');
 
 
 
